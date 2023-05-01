@@ -1,10 +1,11 @@
 <template>
   <div>
     <Suspense>
-      <AsyncCityView />
+      <template #default>
+        <AsyncCityView />
+      </template>
       <template #fallback>
-      <i class="fa-sharp fa-solid fa-loader animate-spin"></i>
-        <p>Loading...</p>
+        <CityViewSkeleton />
       </template>
     </Suspense>
   </div>
@@ -12,4 +13,5 @@
 
 <script setup>
 import AsyncCityView from "../components/AsyncCityView.vue";
+import CityViewSkeleton from "../components/CityViewSkeleton.vue";
 </script>
